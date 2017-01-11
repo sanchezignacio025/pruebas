@@ -4,15 +4,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.entity.Asignacion;
 import com.example.entity.User;
-import com.example.repo.AsignacionRepo;
-import com.example.repo.UserRepo;
 import com.example.service.AsignacionService;
 import com.example.service.UserService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-;
+
 
 @RestController
 @RequestMapping("/main")
@@ -33,7 +30,7 @@ public class MainController {
 	
 	@RequestMapping("/asignacion/{user}")
 	public Iterable<Asignacion> getAsignacion(@PathVariable(name="user") String user){
-		return 
+		return asignacionService.getByUser(userService.getById(Integer.parseInt(user)));
 	}
 	
 	

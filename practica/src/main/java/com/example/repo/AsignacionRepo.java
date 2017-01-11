@@ -8,6 +8,6 @@ import com.example.entity.Asignacion;
 import com.example.entity.User;
 
 public interface AsignacionRepo extends CrudRepository<Asignacion, Integer> {
-	public List<Asignacion> findByUserOrderByUsername(User user);
+	public List<Asignacion> findByUserOrderByJobAsc(User user);
 
 }
